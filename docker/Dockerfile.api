@@ -1,0 +1,18 @@
+FROM python:3.11-slim
+
+WORKDIR /srv
+
+COPY pyproject.toml README.md ./
+COPY app app
+COPY agent agent
+COPY graph graph
+COPY ingestion ingestion
+COPY llm llm
+COPY retrieval retrieval
+
+# The embeddings extra pulls in torch; expect a large image and a model download
+# on first start.
+RUN pip install --no-cache-dir ".[embeddings]"
+
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

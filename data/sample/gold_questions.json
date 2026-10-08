@@ -1,0 +1,17 @@
+[
+  {
+    "question": "Who founded the company that acquired Helix Robotics?",
+    "expected_doc": "aurora_labs.md",
+    "note": "two-hop: Helix Robotics -> Aurora Labs -> founder"
+  },
+  {
+    "question": "Where does Helix Robotics keep its engineering team?",
+    "expected_doc": "helix_robotics.md",
+    "note": "single passage"
+  },
+  {
+    "question": "Where did the founder of Aurora Labs study?",
+    "expected_doc": "mira_chen.md",
+    "note": "two-hop: Aurora Labs -> Mira Chen -> university"
+  }
+]
